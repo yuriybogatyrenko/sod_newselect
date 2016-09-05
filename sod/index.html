@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EasyAutocomplete json example</title>
+  <link href="../dist/easy-autocomplete.min.css" rel="stylesheet" type="text/css">
+  <link href="style.css"  rel="stylesheet" type="text/css" >
+  <script src="../lib/jquery-1.11.2.min.js"></script>
+  <script src="../dist/jquery.easy-autocomplete.js" type="text/javascript" ></script>
+</head>
+<body>
+
+<h1>EasyAutocomplete - country flags example</h1>
+
+<div class="--new-select__wrapper">
+  <input class="--new-select" id="new-select" />
+  <i class="icon--new-select__clean"></i>
+</div>
+<script>
+  var options = {
+    url: "ans.json",
+
+    getValue: "city",
+
+    list: {
+      match: {
+        enabled: true
+      },
+      maxNumberOfElements: 10
+    },
+
+    template: {
+      type: "custom",
+      method: function(value, item) {
+//        console.log(item);
+        return '<p class="--new-select__city-name">'+value+'</p><p class="--new-select__country-name">'+item.region+', '+item.country+'</p>';
+//        return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
+      }
+    }
+  };
+
+  $("#new-select").easyAutocomplete(options);
+
+
+</script>
+
+</body>
+
+</html>

@@ -1121,7 +1121,7 @@ var EasyAutocomplete = (function(scope) {
 
 								for(var i = 0, listDataLength = listData.length; i < listDataLength && counter < listBuilders[builderIndex].maxListSize; i += 1) {
 									$item = $("<li><div class='eac-item'></div></li>");
-									
+
 
 									(function() {
 										var j = i,
